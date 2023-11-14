@@ -17,7 +17,7 @@ export function executeDay(day: number, part: number, test: boolean) {
   }
 }
 
-function day_1_1(test) {
+function day_1_1(test: boolean) {
   let input = getInput(1, test);
   console.log('Some Day 1_1 info...', input);
   return 'wow';
