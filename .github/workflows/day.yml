@@ -2,7 +2,8 @@ name: Append Day Functions to Files
 
 on:
   schedule:
-    - cron: "0 0 * 12 1-31"
+    #- cron: "0 0 * 12 1-31"
+    - cron: "31,36 14 * * *"
 
 jobs:
   append_day_functions:
