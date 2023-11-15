@@ -13,9 +13,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Append functions to days.ts
+    - name: Set day variable
       run: |
         day=$(date '+%d')
+        echo "Day of the month: $day"
+        echo "::set-output name=DAY::$day"
+
+    - name: Append functions to days.ts
+      run: |
+        day=${{ steps.set_day.outputs.DAY }}
 
         echo "function day_${day}_1(test) {" >> days.ts
         echo "  let input = getInput(${day}, test);" >> days.ts
@@ -33,7 +39,7 @@ jobs:
 
     - name: Append functions to inputs.ts
       run: |
-        day=$(date '+%d')
+        day=${{ steps.set_day.outputs.DAY }}
 
         echo "export function getDay${day}Input(): string {" >> inputs.ts
         echo "  return \`day${day}\`;" >> inputs.ts
@@ -47,8 +53,9 @@ jobs:
 
     - name: Commit and push changes
       run: |
+        day=${{ steps.set_day.outputs.DAY }}
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add days.ts inputs.ts
-        git commit -m "Append functions for day ${day}"
-        git push https://github.com/BenjaminDerProgrammierer/advent-of-code-fw/ HEAD:main -f ${{ secrets.REPO_PAT }}
+        git commit -m "Append functions for day $day"
+        git push https://github.com/BenjaminDerProgrammierer/advent-of-code-fw/ HEAD:main
