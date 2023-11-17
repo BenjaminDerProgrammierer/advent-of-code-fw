@@ -1,5 +1,5 @@
 //TODO: Make local version work
-import { executeDay } from './days';
+import { executeDay } from './days.ts';
 let day: number;
 let part: number;
 let test: boolean;
