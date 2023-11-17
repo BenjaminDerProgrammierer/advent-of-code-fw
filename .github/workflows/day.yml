@@ -53,13 +53,8 @@ jobs:
         echo "  return \`day${day}Test\`;" >> inputs.ts
         echo "}" >> inputs.ts
 
-    - uses: stefanzweifel/git-auto-commit-action@v4
+    - uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        branch: main
         commit_message: Init Day ${{ steps.set_day.outputs.DAY }}
         commit_user_name: Day Updater # defaults to "github-actions[bot]"
         commit_user_email: 41898282+my-day-updater@users.noreply.github.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
-
-    
-
-
