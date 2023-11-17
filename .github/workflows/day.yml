@@ -1,21 +1,29 @@
 name: Append Day Functions to Files
 
 on:
+  workflow_dispatch:
   schedule:
-    #- cron: "0 0 * 12 1-31"
-    - cron: "31,36 14 * * *"
+    - cron: "0 0 * 12 *"
 
 jobs:
   append_day_functions:
     runs-on: ubuntu-latest
+    
+    permissions:
+        # Give the default GITHUB_TOKEN write permission to commit and push the
+        # added or changed files to the repository.
+        contents: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      
+    - name: Set day variable
+      id: set_day
+      run: echo "::set-output name=DAY::$(date '+%d')"
 
     - name: Append functions to days.ts
       run: |
-        day=$(date '+%d')
+        day=${{ steps.set_day.outputs.DAY }}
 
         echo "function day_${day}_1(test) {" >> days.ts
         echo "  let input = getInput(${day}, test);" >> days.ts
@@ -33,7 +41,7 @@ jobs:
 
     - name: Append functions to inputs.ts
       run: |
-        day=$(date '+%d')
+        day=${{ steps.set_day.outputs.DAY }}
 
         echo "export function getDay${day}Input(): string {" >> inputs.ts
         echo "  return \`day${day}\`;" >> inputs.ts
@@ -45,10 +53,8 @@ jobs:
         echo "  return \`day${day}Test\`;" >> inputs.ts
         echo "}" >> inputs.ts
 
-    - name: Commit and push changes
-      run: |
-        git config user.name "GitHub Actions"
-        git config user.email "actions@github.com"
-        git add days.ts inputs.ts
-        git commit -m "Append functions for day ${day}"
-        git push https://github.com/BenjaminDerProgrammierer/advent-of-code-fw/ HEAD:main -f ${{ secrets.REPO_PAT }}
+    - uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Init Day ${{ steps.set_day.outputs.DAY }}
+        commit_user_name: Day Updater # defaults to "github-actions[bot]"
+        commit_user_email: 41898282+my-day-updater@users.noreply.github.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
