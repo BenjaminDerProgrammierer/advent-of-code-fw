@@ -1,6 +1,4 @@
-//add Github repo and actions
-import './style.css';
-
+//TODO: Make local version work
 import { executeDay } from './days';
 let day: number;
 let part: number;
@@ -8,7 +6,7 @@ let test: boolean;
 setupElements();
 
 function setupElements() {
-  const consoleOutput: HTMLDivElement = document.getElementById('console');
+  const consoleOutput: HTMLDivElement = document.getElementById('console') as HTMLDivElement;
   consoleOutput.innerHTML = '';
   var oldConsoleLog = console.log;
   console.log = function () {
@@ -47,11 +45,11 @@ function setupElements() {
     consoleOutput.innerHTML += joinedArguments + '\n';
 
     // Call the original console.log function
-    oldConsoleLog.apply(console, arguments);
+    oldConsoleLog.apply(console, arguments as any);
   };
 
-  const dayInput: HTMLInputElement = document.getElementById('day');
-  day = dayInput.value;
+  const dayInput: HTMLInputElement = document.getElementById('day') as HTMLInputElement;
+  day = parseInt(dayInput.value);
   dayInput.onchange = () => {
     day = parseInt(dayInput.value);
     if (day > 31) {
@@ -60,29 +58,29 @@ function setupElements() {
     if (day < 1) {
       day = 1;
     }
-    dayInput.value = day;
+    dayInput.value = String(day);
   };
 
   const partInputs: HTMLInputElement[] = document.querySelectorAll(
     "input[type='radio'][name=part]"
-  );
+  ) as unknown as HTMLInputElement[];
   part = 1;
   partInputs.forEach((e) =>
     e.addEventListener('change', () => {
-      part = document.querySelector(
+      part = parseInt((document.querySelector(
         "input[type='radio'][name=part]:checked"
-      ).value;
+      ) as HTMLInputElement).value);
     })
   );
 
   const testInput: HTMLInputElement = document.querySelector(
     "input[type='checkbox'][name=test]"
-  );
+  ) as HTMLInputElement;
   test = true;
   testInput.onchange = () => {
     test = testInput.checked;
   };
-  const submitButton = document.getElementById('submit');
+  const submitButton = document.getElementById('submit') as HTMLInputElement;
   submitButton.addEventListener('click', () => {
     console.log('[Day: ' + day + ' | Part: ' + part + ' | Test: ' + test + ']');
     console.log('Solution: ' + executeDay(day, part, test));

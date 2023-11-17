@@ -7,7 +7,7 @@ export function getInput(day: number, test: boolean) {
     if (e != '') {
       const regex =
         /^ReferenceError: getDay\d+TestInput is not defined$|^ReferenceError: getDay\d+Input is not defined$/gm;
-      if (regex.test(e)) {
+      if (regex.test(String(e))) {
         return 'Invalid Input';
       } else {
         console.log(String(e));

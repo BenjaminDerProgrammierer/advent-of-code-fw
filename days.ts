@@ -7,7 +7,7 @@ export function executeDay(day: number, part: number, test: boolean) {
   } catch (e) {
     if (e != '') {
       const regex = /ReferenceError: day_[0-9]+_[0-9]+ is not defined/gm;
-      if (regex.test(e)) {
+      if (regex.test(String(e))) {
         return 'Invalid Day';
       } else {
         console.log(String(e));

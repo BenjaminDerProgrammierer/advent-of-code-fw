@@ -2,7 +2,7 @@
   "name": "advent-of-code-fw",
   "private": true,
   "version": "1.0.0",
-  "description": "[Edit in Codeflow ⚡️](https://stackblitz.com/~/github.com/BenjaminDerProgrammierer/advent-of-code-fw)",
+  "description": "Advent of Code Framework",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
