@@ -37,3 +37,10 @@ export function getDay17Input(): string {
 export function getDay17TestInput(): string {
   return `day17Test`;
 }
+export function getDay01Input(): string {
+  return `day01`;
+}
+
+export function getDay01TestInput(): string {
+  return `day01Test`;
+}
