@@ -1,5 +1,5 @@
-//TODO: Make local version work
-const { executeDay } = require('./days.ts');
+//TODO: Make local version work: file problem
+import { executeDay } from './days';
 let day: number;
 let part: number;
 let test: boolean;

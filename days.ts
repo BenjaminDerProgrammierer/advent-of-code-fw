@@ -1,4 +1,4 @@
-const { getInput } = require('./inputs.ts');
+import { getInput } from './inputs';
 export function executeDay(day: number, part: number, test: boolean) {
   try {
     let solution;
@@ -23,13 +23,14 @@ function day_01_1(test: boolean) {
   let inputArrary = input.split('\n');
   let solution = 0;
   for (let value of inputArrary) {
-    let firstnumber = value.search(/^+[0-9]/);
-    let secondnumber = value.search(/[0-9]+$/);;
+    let firstnumber = value.search(/^+\d/);
+    let secondnumber = value.search(/\d+$/);;
     solution += parseInt(String(firstnumber) + String(secondnumber));
   }
   console.log('Some Day 01_1 info...', input);
   return solution;
 }
+
 
 function day_01_2(test: boolean) {
   let input = getInput(1, test);

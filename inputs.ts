@@ -17,7 +17,7 @@ export function getInput(day: number, test: boolean) {
   }
 }
 
-export function getDay01Input(): string {
+function getDay01Input(): string {
   return `threehqv2
   sxoneightoneckk9ldctxxnffqnzmjqvj
   1hggcqcstgpmg26lzxtltcgg
@@ -1020,7 +1020,7 @@ export function getDay01Input(): string {
   26fmrrhhpthree6b`;
 }
 
-export function getDay01TestInput(): string {
+function getDay01TestInput(): string {
   return `1abc2
   pqr3stu8vwx
   a1b2c3d4e5f
