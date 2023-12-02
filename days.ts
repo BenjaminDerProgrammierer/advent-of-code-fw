@@ -37,3 +37,14 @@ function day_01_2(test: boolean) {
   console.log('Some Day 01_2 info...', input);
   return 'wow';
 }
+function day_02_1(test) {
+  let input = getInput(02, test);
+  console.log('Some Day 02_1 info...', input);
+  return 'wow';
+}
+
+function day_02_2(test) {
+  let input = getInput(02, test);
+  console.log('Some Day 02_2 info...', input);
+  return 'wow';
+}

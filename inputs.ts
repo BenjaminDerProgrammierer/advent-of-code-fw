@@ -1026,3 +1026,10 @@ function getDay01TestInput(): string {
   a1b2c3d4e5f
   treb7uchet`;
 }
+export function getDay02Input(): string {
+  return `day02`;
+}
+
+export function getDay02TestInput(): string {
+  return `day02Test`;
+}
