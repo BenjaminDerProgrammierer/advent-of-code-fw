@@ -1033,3 +1033,10 @@ export function getDay02Input(): string {
 export function getDay02TestInput(): string {
   return `day02Test`;
 }
+export function getDay03Input(): string {
+  return `day03`;
+}
+
+export function getDay03TestInput(): string {
+  return `day03Test`;
+}

@@ -48,3 +48,14 @@ function day_02_2(test) {
   console.log('Some Day 02_2 info...', input);
   return 'wow';
 }
+function day_03_1(test) {
+  let input = getInput(03, test);
+  console.log('Some Day 03_1 info...', input);
+  return 'wow';
+}
+
+function day_03_2(test) {
+  let input = getInput(03, test);
+  console.log('Some Day 03_2 info...', input);
+  return 'wow';
+}
