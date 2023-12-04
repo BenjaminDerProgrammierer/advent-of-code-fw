@@ -59,3 +59,14 @@ function day_03_2(test) {
   console.log('Some Day 03_2 info...', input);
   return 'wow';
 }
+function day_04_1(test) {
+  let input = getInput(04, test);
+  console.log('Some Day 04_1 info...', input);
+  return 'wow';
+}
+
+function day_04_2(test) {
+  let input = getInput(04, test);
+  console.log('Some Day 04_2 info...', input);
+  return 'wow';
+}
