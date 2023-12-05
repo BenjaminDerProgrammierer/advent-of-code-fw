@@ -70,3 +70,14 @@ function day_04_2(test) {
   console.log('Some Day 04_2 info...', input);
   return 'wow';
 }
+function day_05_1(test) {
+  let input = getInput(05, test);
+  console.log('Some Day 05_1 info...', input);
+  return 'wow';
+}
+
+function day_05_2(test) {
+  let input = getInput(05, test);
+  console.log('Some Day 05_2 info...', input);
+  return 'wow';
+}
