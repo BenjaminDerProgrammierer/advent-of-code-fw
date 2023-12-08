@@ -103,3 +103,14 @@ function day_07_2(test) {
   console.log('Some Day 07_2 info...', input);
   return 'wow';
 }
+function day_08_1(test) {
+  let input = getInput(08, test);
+  console.log('Some Day 08_1 info...', input);
+  return 'wow';
+}
+
+function day_08_2(test) {
+  let input = getInput(08, test);
+  console.log('Some Day 08_2 info...', input);
+  return 'wow';
+}
