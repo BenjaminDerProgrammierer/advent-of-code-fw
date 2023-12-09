@@ -1075,3 +1075,10 @@ export function getDay08Input(): string {
 export function getDay08TestInput(): string {
   return `day08Test`;
 }
+export function getDay09Input(): string {
+  return `day09`;
+}
+
+export function getDay09TestInput(): string {
+  return `day09Test`;
+}

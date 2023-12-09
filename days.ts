@@ -114,3 +114,14 @@ function day_08_2(test) {
   console.log('Some Day 08_2 info...', input);
   return 'wow';
 }
+function day_09_1(test) {
+  let input = getInput(09, test);
+  console.log('Some Day 09_1 info...', input);
+  return 'wow';
+}
+
+function day_09_2(test) {
+  let input = getInput(09, test);
+  console.log('Some Day 09_2 info...', input);
+  return 'wow';
+}
