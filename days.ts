@@ -136,3 +136,14 @@ function day_10_2(test) {
   console.log('Some Day 10_2 info...', input);
   return 'wow';
 }
+function day_11_1(test) {
+  let input = getInput(11, test);
+  console.log('Some Day 11_1 info...', input);
+  return 'wow';
+}
+
+function day_11_2(test) {
+  let input = getInput(11, test);
+  console.log('Some Day 11_2 info...', input);
+  return 'wow';
+}
