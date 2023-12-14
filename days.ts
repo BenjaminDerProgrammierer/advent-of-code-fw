@@ -169,3 +169,14 @@ function day_13_2(test) {
   console.log('Some Day 13_2 info...', input);
   return 'wow';
 }
+function day_14_1(test) {
+  let input = getInput(14, test);
+  console.log('Some Day 14_1 info...', input);
+  return 'wow';
+}
+
+function day_14_2(test) {
+  let input = getInput(14, test);
+  console.log('Some Day 14_2 info...', input);
+  return 'wow';
+}
