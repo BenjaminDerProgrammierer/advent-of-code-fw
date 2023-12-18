@@ -1138,3 +1138,10 @@ export function getDay17Input(): string {
 export function getDay17TestInput(): string {
   return `day17Test`;
 }
+export function getDay18Input(): string {
+  return `day18`;
+}
+
+export function getDay18TestInput(): string {
+  return `day18Test`;
+}
