@@ -1152,3 +1152,10 @@ export function getDay19Input(): string {
 export function getDay19TestInput(): string {
   return `day19Test`;
 }
+export function getDay20Input(): string {
+  return `day20`;
+}
+
+export function getDay20TestInput(): string {
+  return `day20Test`;
+}
