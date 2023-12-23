@@ -1173,3 +1173,10 @@ export function getDay22Input(): string {
 export function getDay22TestInput(): string {
   return `day22Test`;
 }
+export function getDay23Input(): string {
+  return `day23`;
+}
+
+export function getDay23TestInput(): string {
+  return `day23Test`;
+}
