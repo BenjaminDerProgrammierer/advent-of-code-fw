@@ -301,3 +301,14 @@ function day_25_2(test) {
   console.log('Some Day 25_2 info...', input);
   return 'wow';
 }
+function day_26_1(test) {
+  let input = getInput(26, test);
+  console.log('Some Day 26_1 info...', input);
+  return 'wow';
+}
+
+function day_26_2(test) {
+  let input = getInput(26, test);
+  console.log('Some Day 26_2 info...', input);
+  return 'wow';
+}
