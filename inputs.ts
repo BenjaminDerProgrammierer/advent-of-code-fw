@@ -1201,3 +1201,10 @@ export function getDay26Input(): string {
 export function getDay26TestInput(): string {
   return `day26Test`;
 }
+export function getDay27Input(): string {
+  return `day27`;
+}
+
+export function getDay27TestInput(): string {
+  return `day27Test`;
+}
