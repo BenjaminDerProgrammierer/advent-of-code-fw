@@ -1215,3 +1215,10 @@ export function getDay28Input(): string {
 export function getDay28TestInput(): string {
   return `day28Test`;
 }
+export function getDay29Input(): string {
+  return `day29`;
+}
+
+export function getDay29TestInput(): string {
+  return `day29Test`;
+}
