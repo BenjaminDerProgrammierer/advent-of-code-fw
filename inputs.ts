@@ -1229,3 +1229,10 @@ export function getDay30Input(): string {
 export function getDay30TestInput(): string {
   return `day30Test`;
 }
+export function getDay31Input(): string {
+  return `day31`;
+}
+
+export function getDay31TestInput(): string {
+  return `day31Test`;
+}

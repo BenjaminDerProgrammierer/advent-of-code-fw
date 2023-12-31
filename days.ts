@@ -356,3 +356,14 @@ function day_30_2(test) {
   console.log('Some Day 30_2 info...', input);
   return 'wow';
 }
+function day_31_1(test) {
+  let input = getInput(31, test);
+  console.log('Some Day 31_1 info...', input);
+  return 'wow';
+}
+
+function day_31_2(test) {
+  let input = getInput(31, test);
+  console.log('Some Day 31_2 info...', input);
+  return 'wow';
+}
