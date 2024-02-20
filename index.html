@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advent of code Framework</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="bin/ts/index.js"></script>
-  </head>
-  <body>
-    <div id="container">
-      <h1>🎄 Advent of Code ❄️</h1>
-      <div id="selector">
-        <label for="day">Day: </label>
-        <input type="number" value="1" id="day" />
-        <br />
-        <label for="part">Part: </label><br />
-        <input type="radio" name="part" checked value="1" /> Part 1 <br />
-        <input type="radio" name="part" value="2" /> Part 2 <br /><br />
-        <input type="checkbox" name="test" checked /> Test-Input <br />
-        <br />
-        <input type="submit" value="Run Code" id="submit" />
-      </div>
 
-      <div id="console"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎄 Advent of Code Framework ❄️</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="dist/ts/index.js"></script>
+</head>
+
+<body>
+  <div id="adventofcodeframework">
+    <h1>🎄 Advent of Code 20<span id="year">YY</span>❄️</h1>
+    
+    <table id="selector">
+      <tr>
+        <td>
+          <div id="daygroup">
+            <label for="day" id="daylabel">Day: </label>
+            <input type="number" value="1" id="day" />
+          </div>
+        </td>
+        <td>
+          <div class="radio-input">
+            <label>
+              <input type="radio" id="part-1" name="part" value="1" checked>
+              <span>Part 1</span>
+            </label>
+            <label>
+              <input type="radio" id="part-2" name="part" value="2">
+              <span>Part 2</span>
+            </label>
+            <span class="selection"></span>
+          </div>
+        </td>
+        <td>
+          <div class="radio-input">
+            <label>
+              <input type="radio" id="test-1" name="test" value="1" checked>
+              <span>Test Input</span>
+            </label>
+            <label>
+              <input type="radio" id="test-0" name="test" value="0">
+              <span>Real Input</span>
+            </label>
+            <span class="selection"></span>
+          </div>
+        </td>
+        <td>
+          <input type="submit" value="Run Code" id="submit" />
+        </td>
+      </tr>
+    </table>
+
+    <div id="console">
+      Javascript Console not enabled
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
