@@ -1,16 +1,37 @@
-export default function run(
-  year: string,
-  day: number,
-  part: number,
-  test: boolean
-): string {
+export default async function run(
+  test: boolean,
+  getInput: Function
+): Promise<string> {
+  let input: string;
   let solution: string = "";
+  if (test) {
+    input = `
+    someTESTinput
+    `;
+  } else {
+    input = await getInput();
+    if (
+      input == undefined ||
+      input == "" ||
+      input == "\n" ||
+      input == "\r\n" ||
+      input == "\r" ||
+      input == "\t" ||
+      input == " " ||
+      input == "{}"
+    ) {
+      console.error("Invalid input");
+      throw new Error("Invalid input");
+    }
+  }
+
   // Add your code here
 
   console.log(
-    `Running code with arguments: year=${year}, day=${day}, part=${part}, test=${test}`
+    "Running day_2023/day01/part1 with input: " + input.length + " characters:",
+    input
   );
-  solution = "Hello World!";
+  solution = "helloworld";
+
   return solution;
-  // Add your part1 logic here
 }

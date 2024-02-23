@@ -1,211 +1,278 @@
 html {
-  background: #1c1c1c;
+    background: #1c1c1c;
 }
 
-#adventofcodeframework * {
-  color: #080808;
+#advent-of-code-framework * {
+    color: #080808;
 }
 
-#adventofcodeframework {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  width: fit-content;
+#advent-of-code-framework {
+    --aocfw-width: 500px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    width: var(--aocfw-width);
 }
 
-#adventofcodeframework > h1 {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  width: 559.5px;
-  margin: 0;
-  border-radius: 10px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  background-color: #e6e6e6;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+#advent-of-code-framework>h1 {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    width: calc(var(--aocfw-width)-5px);
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #e6e6e6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#adventofcodeframework > #selector {
-  background-color: #c7c7c7;
-  padding: 10px;
-  margin-left: 0;
-  margin-bottom: 0;
-  width: 535px;
+#advent-of-code-framework>#selector {
+    width: calc(var(--aocfw-width)-10px);
+    background-color: #c7c7c7;
+    padding: 10px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-#adventofcodeframework > #selector input[type='number'] {
-  width: 35px;
-  border: none;
-  font-weight: 600;
-  letter-spacing: -1px;
-  font-size: 14px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-#adventofcodeframework > #selector  #daygroup {
-  position: relative;
-  display: flex;
-  padding: 10px;
-  align-items: center;
-  border-radius: 10px;
-  background-color: #fff;
-  color: #000000;
-  overflow: hidden;
-  border: 1px solid rgba(53, 52, 52, 0.226);
-  font-weight: 600;
-  letter-spacing: -1px;
-  font-size: 14px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-#adventofcodeframework > #selector input[type='submit'] {
-  position: relative;
-  display: flex;
-  padding: 10px;
-  align-items: center;
-  border-radius: 10px;
-  background-color: #fff;
-  color: #000000;
-  overflow: hidden;
-  border: 1px solid rgba(53, 52, 52, 0.226);
-  font-weight: 600;
-  letter-spacing: -1px;
-  font-size: 14px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#advent-of-code-framework>#selector>* {
+    margin: 5px;
 }
 
-#adventofcodeframework > #selector input[type='submit']:hover {
-  background-color: #0b75df;
+#advent-of-code-framework>#selector #day-group {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000;
+    overflow: hidden;
+    border: 1px solid rgba(53, 52, 52, 0.226);
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#adventofcodeframework > #selector input[type='submit']:active {
-  background-color: #0868c8;
+#advent-of-code-framework>#selector input[type='number'] {
+    width: 100%;
+    border: none;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* Console styles */
-#adventofcodeframework > #console {
-  width: 500px;
-  height: 400px;
-  margin: 0;
-  margin-top: 0;
-  padding: 30px;
-  border: black 5px solid;
-  border-top: none;
-  border-radius: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  overflow: auto;
-  background-color: #000;
-  background-image: radial-gradient(rgba(0, 150, 0, 0.75), #000 120%);
-  color: #fff;
-  font: 1.3rem Inconsolata, monospace;
-  text-shadow: 0 0 5px #c8c8c8;
+#advent-of-code-framework>#selector input[type='number']:focus-visible {
+    border: none;
 }
 
-#adventofcodeframework > #console::-webkit-scrollbar {
-  width: 10px;
+#advent-of-code-framework>#selector input[type='submit'],
+#advent-of-code-framework>#selector button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000;
+    overflow: hidden;
+    border: none;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#advent-of-code-framework>#selector button:disabled {
+    background-color: #a3a3a3;
+}
+#advent-of-code-framework>#selector button:disabled:hover {
+    background-color: #a3a3a3;
+}
+#advent-of-code-framework>#selector button:disabled:active {
+    background-color: #a3a3a3;
+}
+#advent-of-code-framework>#selector input[type='submit']:hover,
+#advent-of-code-framework>#selector button:hover {
+    background-color: #0b75df;
 }
 
-#adventofcodeframework > #console::-webkit-scrollbar-track {
-  background: rgba(0, 77, 0, 0.75);
-  border-radius: 10px;
+#advent-of-code-framework>#selector input[type='submit']:active,
+#advent-of-code-framework>#selector button:active {
+    background-color: #0868c8;
 }
 
-#adventofcodeframework > #console::-webkit-scrollbar-thumb {
-  background: rgba(0, 75, 0, 0.75);
-  border-radius: 10px;
+#advent-of-code-framework>#console-output {
+    width: calc(var(--aocfw-width)-35px);
+    height: 400px;
+    margin: 0;
+    margin-top: 0;
+    padding: 30px;
+    border: black 5px solid;
+    border-top: none;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    overflow: auto;
+    background-color: #000;
+    background-image: radial-gradient(rgba(0, 150, 0, 0.75), #000 120%);
+    color: #fff;
+    font: 1.3rem Inconsolata, monospace;
+    text-shadow: 0 0 5px #c8c8c8;
 }
 
-#adventofcodeframework > #console::-webkit-scrollbar-thumb:hover {
-  background: #555;
+#advent-of-code-framework>#console-output::-webkit-scrollbar {
+    width: 10px;
 }
 
-#adventofcodeframework > #console .number {
-  color: #00ca98;
+#advent-of-code-framework>#console-output::-webkit-scrollbar-track {
+    background: rgba(0, 77, 0, 0.75);
+    border-radius: 10px;
 }
 
-#adventofcodeframework > #console .boolean {
-  color: #ca2800;
+#advent-of-code-framework>#console-output::-webkit-scrollbar-thumb {
+    background: rgb(0, 138, 0);
+    border-radius: 10px;
 }
 
-#adventofcodeframework > #console .undefined {
-  color: #c300ca;
-}
-#adventofcodeframework > #console .error {
-  color: #ff0000;
-}
-#adventofcodeframework > #console .warn {
-  color: #eeff00;
-}
-#adventofcodeframework > #console::before {
-  content: '';
-  position: absolute;
-  height: 465px;
-  width: 564px;
-  transform: translateX(-32px) translateY(-32px);
-  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+#advent-of-code-framework>#console-output::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
-#adventofcodeframework > #console::selection {
-  background: #0080ff;
-  text-shadow: none;
+#advent-of-code-framework>#console-output .number {
+    color: #00ca98;
 }
 
-/* Radio Input by UIVerse*/
+#advent-of-code-framework>#console-output .boolean {
+    color: #ca2800;
+}
+
+#advent-of-code-framework>#console-output .undefined {
+    color: #c300ca;
+}
+
+#advent-of-code-framework>#console-output .error {
+    color: #ff0000;
+}
+
+#advent-of-code-framework>#console-output .warn {
+    color: #eeff00;
+}
+
+#advent-of-code-framework>#console-output::before {
+    content: '';
+    position: absolute;
+    height: 465px;
+    width: var(--aocfw-width);
+    transform: translateX(-32px) translateY(-32px);
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+}
+
+#advent-of-code-framework>#console-output::selection {
+    background: #0080ff;
+    text-shadow: none;
+}
+
+/* Radio Input by UIVerse */
 .radio-input input {
-  display: none;
+    display: none;
 }
 
 .radio-input {
-  --container_width: 180px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  background-color: #fff;
-  color: #000000;
-  width: var(--container_width);
-  overflow: hidden;
-  border: 1px solid rgba(53, 52, 52, 0.226);
+    --container-width: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000;
+    width: var(--container-width);
+    overflow: hidden;
+    border: 1px solid rgba(53, 52, 52, 0.226);
 }
 
 .radio-input label {
-  width: 100%;
-  padding: 10px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  font-weight: 600;
-  letter-spacing: -1px;
-  font-size: 14px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.selection {
-  display: none;
-  position: absolute;
-  height: 100%;
-  width: calc(var(--container_width) / 2);
-  z-index: 0;
-  left: 0;
-  top: 0;
-  transition: .15s ease;
+.selection-indicator {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: calc(var(--container-width) / 2);
+    z-index: 0;
+    left: 0;
+    top: 0;
+    transition: .15s ease;
 }
 
 .radio-input label:has(input:checked) {
-  color: #fff;
+    color: #fff;
 }
 
-.radio-input label:has(input:checked) ~ .selection {
-  background-color: #0b75df;
-  display: inline-block;
+.radio-input label:has(input:checked)~.selection-indicator {
+    background-color: #0b75df;
+    display: inline-block;
 }
 
-.radio-input label:nth-child(1):has(input:checked) ~ .selection {
-  transform: translateX(calc(var(--container_width) * 0/2));
+.radio-input label:nth-child(1):has(input:checked)~.selection-indicator {
+    transform: translateX(calc(var(--container-width) * 0/2));
 }
 
-.radio-input label:nth-child(2):has(input:checked) ~ .selection {
-  transform: translateX(calc(var(--container_width) * 1/2));
+.radio-input label:nth-child(2):has(input:checked)~.selection-indicator {
+    transform: translateX(calc(var(--container-width) * 1/2));
+}
+
+/* Modal styles */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
 }
