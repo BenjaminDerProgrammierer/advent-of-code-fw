@@ -1,0 +1,21 @@
+{
+    "name": "🎄 Advent of Code Framework ❄️",
+    "short_name": "AoC Framework",
+    "start_url": ".",
+    "theme_color": "#1c1c1c",
+    "background_color": "#1c1c1c",
+    "display": "standalone",
+    "description": "A readable Hacker News app.",
+    "icons": [
+        {
+            "src": "/assets/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
