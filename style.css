@@ -18,7 +18,6 @@ html {
     display: flex;
     justify-content: center;
     padding: 5px;
-    width: calc(var(--aocfw-width)-5px);
     margin: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -27,7 +26,6 @@ html {
 }
 
 #advent-of-code-framework>#selector {
-    width: calc(var(--aocfw-width)-10px);
     background-color: #c7c7c7;
     padding: 10px;
     margin: 0;
@@ -106,7 +104,6 @@ html {
 }
 
 #advent-of-code-framework>#console-output {
-    width: calc(var(--aocfw-width)-35px);
     height: 400px;
     margin: 0;
     margin-top: 0;
@@ -237,14 +234,51 @@ html {
 }
 
 /* Modal styles */
+
+input[type='number'] {
+    width: 100%;
+    border: none;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.close {
+    color: #000000;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    transform: translateX(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.close:hover {
+    background: #ff0000;
+    cursor: pointer;
+}
+input[type='number']:focus-visible {
+    border: none;
+}
+
 .modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .modal-body {
-    padding: 2px 16px;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .modal-footer {
@@ -254,7 +288,7 @@ html {
 }
 
 .modal-content {
-    position: relative;
+    position: absolute;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
@@ -262,9 +296,32 @@ html {
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    z-index: 1000;
+    top: 5%;
+    right: 10%;
+    border-radius: 10px;
 }
 
+.modal-content .settings-group {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000;
+    overflow: hidden;
+    border: 1px solid rgba(53, 52, 52, 0.226);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#settings-modal {
+    display: none;
+}
 @keyframes animatetop {
     from {
         top: -300px;

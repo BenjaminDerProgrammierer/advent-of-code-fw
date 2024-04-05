@@ -1,8 +1,9 @@
-//import { executeDay } from "/days/dynamicDays";
+//import { executeDay } from "./days/dynamicDays";
 let day: number = 1;
 let part: number = 1;
 let test: boolean = true;
 let year: number = 2015;
+let mode: boolean = true; //true: dark | light: false
 
 const inputs = {
   day: document.getElementById("day-input") as HTMLInputElement,
@@ -12,13 +13,24 @@ const inputs = {
   submitButton: document.getElementById("submit-button") as HTMLButtonElement,
   resetButton: document.getElementById("reset-button") as HTMLButtonElement,
   settingsButton: document.getElementById("settings-button") as HTMLButtonElement,
+  
+  year: document.getElementById("year-input") as HTMLInputElement,
 };
 
 const outputs = {
   console: document.getElementById("console-output") as HTMLDivElement,
   year: document.getElementById("year-placeholder") as HTMLSpanElement,
-  settingsModal: document.getElementById("settings-modal") as HTMLDivElement,
 };
+
+const modals = {
+  settingsModal: {
+    modal: document.getElementById("settings-modal") as HTMLDivElement,
+    activateButton: document.getElementById("settings-button") as HTMLButtonElement,
+    closeButton: document.querySelector("#settings-modal .close") as HTMLSpanElement
+  }
+}
+
+modals.settingsModal.modal.style.display = "block";
 
 outputs.year.innerText = String(year).substring(2);
 outputs.console.innerHTML = "Output will appear here\n<br>";
@@ -97,14 +109,42 @@ inputs.radioButtons.forEach((button: HTMLInputElement) => {
       case "test":
         test = target.value == "1";
         break;
+      case "mode":
+        mode = target.value == "1";
+        break;
     }
   });
 });
 
-// inputs.submitButton.addEventListener("click", () =>
-//   executeDay(year, day, part, test)
-// );
+inputs.submitButton.addEventListener("click", () =>
+  executeDay(year, day, part, test)
+);
+
 inputs.resetButton.addEventListener("click", () => {
   outputs.console.innerHTML = "";
 });
 
+modals.settingsModal.activateButton.addEventListener("click", () => {
+  modals.settingsModal.modal.style.display = "block";
+});
+
+modals.settingsModal.closeButton.addEventListener("click", ()=> {
+  modals.settingsModal.modal.style.display = "none";
+})
+
+function executeDay(
+  year: number,
+  day: number,
+  part: number,
+  test: boolean
+) {
+  console.log(
+        "[ Day: " +
+          day +
+          " | Part " +
+          part +
+          " | " +
+          (test ? "Test" : "Real") +
+          " Input ]"
+      );
+}

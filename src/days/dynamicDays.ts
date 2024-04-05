@@ -1,66 +1,85 @@
+//only test version
 export async function executeDay(
   year: number,
   day: number,
   part: number,
   test: boolean
 ) {
-  let solution: String = "Not implemented yet";
-  const zeroLeadingDay = String(day).padStart(2, "0");
-  const modulePath = `./days/${year}/day${zeroLeadingDay}/part${part}.js`;
-  const inputPath = `./days/${year}/day${zeroLeadingDay}/input.txt`;
   console.log(
-    "[ Day: " +
-      zeroLeadingDay +
-      " | Part " +
-      part +
-      " | " +
-      (test ? "Test" : "Real") +
-      " Input ]"
-  );
-
-  async function getInput(): Promise<string | undefined> {
-    return await readFile(inputPath)
-      .catch((e) => {
-        return undefined;
-      })
-      .then((input) => {
-        return input;
-      });
-  }
-
-  try {
-    await import(modulePath).then((module) => {
-      if (module.default !== undefined) {
-        solution = module.default(test, getInput);
-      } else {
-        throw new Error("No default module");
-      }
-    });
-  } catch (e: any) {
-    console.error(
-      `Day ${year}_${zeroLeadingDay}_${part}${test ? "_test" : ""} not found (${
-        e.message + ")"
-      })`
-    );
-  }
-
-  console.log("Solution: " + solution);
-  console.log("--------------- ran code --------------");
+        "[ Day: " +
+          day +
+          " | Part " +
+          part +
+          " | " +
+          (test ? "Test" : "Real") +
+          " Input ]"
+      );
 }
 
-async function readFile(filePath: string): Promise<string> {
-  try {
-    const response = await fetch(filePath);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch file: ${filePath}`);
-    }
-    const fileContent = await response.text();
-    return fileContent;
-  } catch (e) {
-    console.log(e);
-    throw e;
-  }
-}
+//OLD CODE
+// export async function executeDay(
+//   year: number,
+//   day: number,
+//   part: number,
+//   test: boolean
+// ) {
+//   let solution: String = "Not implemented yet";
+//   const zeroLeadingDay = String(day).padStart(2, "0");
+//   const modulePath = `./days/${year}/day${zeroLeadingDay}/part${part}.js`;
+//   const inputPath = `./days/${year}/day${zeroLeadingDay}/input.txt`;
+//   console.log(
+//     "[ Day: " +
+//       zeroLeadingDay +
+//       " | Part " +
+//       part +
+//       " | " +
+//       (test ? "Test" : "Real") +
+//       " Input ]"
+//   );
+
+//   async function getInput(): Promise<string | undefined> {
+//     return await readFile(inputPath)
+//       .catch((e) => {
+//         return undefined;
+//       })
+//       .then((input) => {
+//         return input;
+//       });
+//   }
+
+//   try {
+//     await import(modulePath).then((module) => {
+//       if (module.default !== undefined) {
+//         solution = module.default(test, getInput);
+//       } else {
+//         throw new Error("No default module");
+//       }
+//     });
+//   } catch (e: any) {
+//     console.error(
+//       `Day ${year}_${zeroLeadingDay}_${part}${test ? "_test" : ""} not found (${
+//         e.message + ")"
+//       })`
+//     );
+//   }
+
+//   console.log("Solution: " + solution);
+//   console.log("--------------- ran code --------------");
+// }
+
+// async function readFile(filePath: string): Promise<string> {
+//   try {
+//     const response = await fetch(filePath);
+//     if (!response.ok) {
+//       throw new Error(`Failed to fetch file: ${filePath}`);
+//     }
+//     const fileContent = await response.text();
+//     return fileContent;
+//   } catch (e) {
+//     console.log(e);
+//     throw e;
+//   }
+// }
 
 //OLD CODE
 //   try {
