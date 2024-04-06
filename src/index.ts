@@ -20,6 +20,7 @@ const inputs = {
 const outputs = {
   console: document.getElementById("console-output") as HTMLDivElement,
   year: document.getElementById("year-placeholder") as HTMLSpanElement,
+  lightmode: document.getElementById("lightmode") as HTMLDivElement,
 };
 
 const modals = {
@@ -34,7 +35,8 @@ modals.settingsModal.modal.style.display = "block";
 
 outputs.year.innerText = String(year).substring(2);
 outputs.console.innerHTML = "Output will appear here\n<br>";
-
+outputs.lightmode.innerHTML = "";
+outputs.lightmode.innerHTML = "<link rel='stylesheet' href='style-light.css'>";
 const oldconsole = console;
 console = {
   ...oldconsole,
@@ -99,6 +101,18 @@ inputs.day.addEventListener("change", () => {
   inputs.day.value = String(day);
 });
 
+inputs.year.addEventListener("change", () => {
+  year = parseInt(inputs.year.value);
+  if (day > 2099) {
+    day = 2099;
+  }
+  if (day < 2015) {
+    day = 2015;
+  }
+  inputs.year.value = String(year);
+  outputs.year.innerText = String(year).substring(2);
+});
+
 inputs.radioButtons.forEach((button: HTMLInputElement) => {
   button.addEventListener("change", (e: Event) => {
     const target = e.target as HTMLInputElement;
@@ -111,6 +125,7 @@ inputs.radioButtons.forEach((button: HTMLInputElement) => {
         break;
       case "mode":
         mode = target.value == "1";
+        outputs.lightmode.innerHTML = mode?"":"<link rel='stylesheet' href='style-light.css'>";
         break;
     }
   });
