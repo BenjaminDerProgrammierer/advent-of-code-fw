@@ -12,8 +12,10 @@ const inputs = {
   ) as unknown as HTMLInputElement[],
   submitButton: document.getElementById("submit-button") as HTMLButtonElement,
   resetButton: document.getElementById("reset-button") as HTMLButtonElement,
-  settingsButton: document.getElementById("settings-button") as HTMLButtonElement,
-  
+  settingsButton: document.getElementById(
+    "settings-button"
+  ) as HTMLButtonElement,
+
   year: document.getElementById("year-input") as HTMLInputElement,
 };
 
@@ -26,17 +28,20 @@ const outputs = {
 const modals = {
   settingsModal: {
     modal: document.getElementById("settings-modal") as HTMLDivElement,
-    activateButton: document.getElementById("settings-button") as HTMLButtonElement,
-    closeButton: document.querySelector("#settings-modal .close") as HTMLSpanElement
-  }
-}
+    activateButton: document.getElementById(
+      "settings-button"
+    ) as HTMLButtonElement,
+    closeButton: document.querySelector(
+      "#settings-modal .close"
+    ) as HTMLSpanElement,
+  },
+};
 
 modals.settingsModal.modal.style.display = "block";
 
 outputs.year.innerText = String(year).substring(2);
 outputs.console.innerHTML = "Output will appear here\n<br>";
-outputs.lightmode.innerHTML = "";
-outputs.lightmode.innerHTML = "<link rel='stylesheet' href='style-light.css'>";
+outputs.lightmode.innerHTML = "<link rel='stylesheet' href='style-dark.css'>";
 const oldconsole = console;
 console = {
   ...oldconsole,
@@ -125,7 +130,9 @@ inputs.radioButtons.forEach((button: HTMLInputElement) => {
         break;
       case "mode":
         mode = target.value == "1";
-        outputs.lightmode.innerHTML = mode?"":"<link rel='stylesheet' href='style-light.css'>";
+        outputs.lightmode.innerHTML = mode
+          ? "<link rel='stylesheet' href='style-dark.css'>"
+          : "<link rel='stylesheet' href='style-light.css'>";
         break;
     }
   });
@@ -143,23 +150,18 @@ modals.settingsModal.activateButton.addEventListener("click", () => {
   modals.settingsModal.modal.style.display = "block";
 });
 
-modals.settingsModal.closeButton.addEventListener("click", ()=> {
+modals.settingsModal.closeButton.addEventListener("click", () => {
   modals.settingsModal.modal.style.display = "none";
-})
+});
 
-function executeDay(
-  year: number,
-  day: number,
-  part: number,
-  test: boolean
-) {
+function executeDay(year: number, day: number, part: number, test: boolean) {
   console.log(
-        "[ Day: " +
-          day +
-          " | Part " +
-          part +
-          " | " +
-          (test ? "Test" : "Real") +
-          " Input ]"
-      );
+    "[ Day: " +
+      day +
+      " | Part " +
+      part +
+      " | " +
+      (test ? "Test" : "Real") +
+      " Input ]"
+  );
 }

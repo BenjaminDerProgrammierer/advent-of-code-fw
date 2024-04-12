@@ -1,19 +1,4 @@
-:root {
-    --color-0: #000000;
-    --color-1: #111111;
-    --color-2: #f7f7f7;
-    --color-3: #191919;
-    --color-4: #383838;
-    --color-5: #5c5c5c;
-    --color-6: #010101;
-    --color-7: #777777;
-    --color-accent-1: #08529c;
-    --color-accent-2: #043464;
-    --color-accent-3: #063b70;
-    --color-accent-4: #2e5c2e;
-}
-
-  html {
+html {
     background: var(--color-1);
 }
 
