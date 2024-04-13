@@ -1,0 +1,351 @@
+html {
+  background: var(--color-1);
+}
+
+#advent-of-code-framework * {
+  color: var(--color-2);
+}
+
+#advent-of-code-framework {
+  --aocfw-width: 500px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  width: var(--aocfw-width);
+}
+
+#advent-of-code-framework > h1 {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--color-3);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#advent-of-code-framework > #selector {
+  background-color: var(--color-4);
+  padding: 10px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#advent-of-code-framework > #selector > * {
+  margin: 5px;
+}
+
+#advent-of-code-framework > #selector #day-group {
+  position: relative;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--color-0);
+  color: #000000;
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#advent-of-code-framework > #selector input[type="number"] {
+  width: 100%;
+  background-color: var(--color-0);
+  border: none;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#advent-of-code-framework > #selector input[type="number"]:focus-visible {
+  border: none;
+}
+
+#advent-of-code-framework > #selector input[type="submit"],
+#advent-of-code-framework > #selector button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--color-0);
+  color: var(--color-invert-0);
+  overflow: hidden;
+  border: none;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#advent-of-code-framework > #selector button:disabled {
+  background-color: var(--color-5);
+}
+#advent-of-code-framework > #selector button:disabled:hover {
+  background-color: var(--color-5);
+}
+#advent-of-code-framework > #selector button:disabled:active {
+  background-color: var(--color-5);
+}
+#advent-of-code-framework > #selector input[type="submit"]:hover,
+#advent-of-code-framework > #selector button:hover {
+  background-color: var(--color-accent-1);
+}
+
+#advent-of-code-framework > #selector input[type="submit"]:active,
+#advent-of-code-framework > #selector button:active {
+  background-color: var(--color-accent-2);
+}
+
+#advent-of-code-framework > #console-output {
+  height: 400px;
+  margin: 0;
+  margin-top: 0;
+  padding: 30px;
+  border: black 5px solid;
+  border-top: none;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  overflow: auto;
+  background-color: #000;
+  background-image: radial-gradient(rgba(0, 150, 0, 0.75), #000 120%);
+  color: #fff;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #c8c8c8;
+}
+
+#advent-of-code-framework > #console-output::-webkit-scrollbar {
+  width: 10px;
+}
+
+#advent-of-code-framework > #console-output::-webkit-scrollbar-track {
+  background: rgba(0, 77, 0, 0.75);
+  border-radius: 10px;
+}
+
+#advent-of-code-framework > #console-output::-webkit-scrollbar-thumb {
+  background: rgb(0, 138, 0);
+  border-radius: 10px;
+}
+
+#advent-of-code-framework > #console-output::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#advent-of-code-framework > #console-output .number {
+  color: #00ca98;
+}
+
+#advent-of-code-framework > #console-output .boolean {
+  color: #ca2800;
+}
+
+#advent-of-code-framework > #console-output .undefined {
+  color: #c300ca;
+}
+
+#advent-of-code-framework > #console-output .error {
+  color: #ff0000;
+}
+
+#advent-of-code-framework > #console-output .warn {
+  color: #eeff00;
+}
+
+#advent-of-code-framework > #console-output::before {
+  content: "";
+  position: absolute;
+  height: 465px;
+  width: var(--aocfw-width);
+  transform: translateX(-32px) translateY(-32px);
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+#advent-of-code-framework > #console-output::selection {
+  background: #0080ff;
+  text-shadow: none;
+}
+
+/* Radio Input by UIVerse */
+.radio-input input {
+  display: none;
+}
+
+.radio-input {
+  --container-width: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--color-0);
+  color: var(--color-invert-0);
+  width: var(--container-width);
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+}
+
+.radio-input label {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.selection-indicator {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(var(--container-width) / 2);
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: 0.15s ease;
+}
+
+.radio-input label:has(input:checked) {
+  color: var(--color-0);
+}
+
+.radio-input label:has(input:checked) ~ .selection-indicator {
+  background-color: var(--color-accent-3);
+  display: inline-block;
+}
+
+.radio-input label:nth-child(1):has(input:checked) ~ .selection-indicator {
+  transform: translateX(calc(var(--container-width) * 0 / 2));
+}
+
+.radio-input label:nth-child(2):has(input:checked) ~ .selection-indicator {
+  transform: translateX(calc(var(--container-width) * 1 / 2));
+}
+
+/* Modal styles */
+
+input[type="number"] {
+  width: 100%;
+  border: none;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: var(--color-0);
+}
+
+.close {
+  color: var(--color-invert-0);
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  transform: translateX(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.close:hover {
+  background: #ff0000;
+  cursor: pointer;
+}
+input[type="number"]:focus-visible {
+  border: none;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: var(--color-accent-4);
+  color: white;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.modal-body {
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: var(--color-accent-4);
+  color: white;
+}
+
+.modal-content {
+  position: absolute;
+  background-color: var(--color-6);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--color-7);
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  z-index: 1000;
+  top: 5%;
+  right: 10%;
+  border-radius: 10px;
+}
+
+.modal-content .settings-group {
+  position: relative;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--color-0);
+  color: var(--color-invert-0);
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#settings-modal {
+  display: none;
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

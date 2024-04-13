@@ -1,8 +1,8 @@
-//import { executeDay } from "./days/dynamicDays";
+import { executeDay } from "./days/dynamicDays.js";
 let day: number = 1;
 let part: number = 1;
 let test: boolean = true;
-let year: number = 2015;
+let year: number = 2023;
 let mode: boolean = true; //true: dark | light: false
 
 const inputs = {
@@ -36,8 +36,6 @@ const modals = {
     ) as HTMLSpanElement,
   },
 };
-
-modals.settingsModal.modal.style.display = "block";
 
 outputs.year.innerText = String(year).substring(2);
 outputs.console.innerHTML = "Output will appear here\n<br>";
@@ -153,15 +151,3 @@ modals.settingsModal.activateButton.addEventListener("click", () => {
 modals.settingsModal.closeButton.addEventListener("click", () => {
   modals.settingsModal.modal.style.display = "none";
 });
-
-function executeDay(year: number, day: number, part: number, test: boolean) {
-  console.log(
-    "[ Day: " +
-      day +
-      " | Part " +
-      part +
-      " | " +
-      (test ? "Test" : "Real") +
-      " Input ]"
-  );
-}

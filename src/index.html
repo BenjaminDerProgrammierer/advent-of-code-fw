@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advent of Code Framework for solving coding challenges in TypeScript">
+    <meta name="keywords" content="Advent of Code, coding challenges, framework">
+    <meta name="author" content="@BenjaminDerProgrammierer">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="🎄 Advent of Code Framework ❄️">
+    <meta property="og:description" content="A framework for solving Advent of Code challenges in TypeScript">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="">
+    <meta name="twitter:title" content="🎄 Advent of Code Framework ❄️">
+    <meta name="twitter:description" content="A framework for solving Advent of Code challenges in TypeScript">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:creator" content="@BenjaminDerProgrammierer">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png; charset=utf-8" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png; charset=utf-8" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <title>🎄 Advent of Code Framework ❄️</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="index.js"></script>
+</head>
+
+<body>
+    <div id="lightmode"></div>
+    <div id="advent-of-code-framework">
+        <div id="settings-modal" class="modal-content" style="display: none;">
+            <div id="settings-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Settings</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="settings-group">
+                        <label for="year-input">Year: <input type="number" value="2023" id="year-input" min="2015"
+                                max="2099" /></label>
+                    </div>
+                    <div class="settings-group">
+                        <label for="mode">Theme:
+                            <label>
+                                <input type="radio" id="mode-dark-radio" name="mode" value="0" />
+                                <span>Light</span>
+                            </label>
+                            <label>
+                                <input type="radio" id="mode-light-radio" name="mode" value="1" checked />
+                                <span>Dark</span>
+                            </label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>🎄 Advent of Code 20<span id="year-placeholder">YY</span>❄️</h1>
+
+        <div id="selector">
+            <div id="day-group">
+                <label for="day-input" id="day-label">Day: </label>
+                <input type="number" value="1" id="day-input" min="1" max="25" />
+            </div>
+            <div class="radio-input">
+                <label>
+                    <input type="radio" id="part-1-radio" name="part" value="1" checked />
+                    <span>Part 1</span>
+                </label>
+                <label>
+                    <input type="radio" id="part-2-radio" name="part" value="2" />
+                    <span>Part 2</span>
+                </label>
+                <span class="selection-indicator"></span>
+            </div>
+            <div class="radio-input">
+                <label>
+                    <input type="radio" id="test-1-radio" name="test" value="1" checked />
+                    <span>Test Input</span>
+                </label>
+                <label>
+                    <input type="radio" id="test-0-radio" name="test" value="0" />
+                    <span>Real Input</span>
+                </label>
+                <span class="selection-indicator"></span>
+            </div>
+            <input type="submit" value="Run Code" id="submit-button" />
+            <button id="reset-button" type="reset">Reset Console</button>
+            <button id="settings-button" type="button">Settings</button>
+
+        </div>
+
+        <div id="console-output">Javascript Console not enabled -
+            Inserting some placeholder text to show that the scrollbars are working.
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>X
+        </div>
+    </div>
+</body>
+
+</html>

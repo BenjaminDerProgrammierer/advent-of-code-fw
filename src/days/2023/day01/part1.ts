@@ -1,37 +1,29 @@
-export default async function run(
-  test: boolean,
-  getInput: Function
-): Promise<string> {
-  let input: string;
-  let solution: string = "";
+export default async function day(getInput: Function, test: boolean): Promise<string> {
+  let input: string = "";
   if (test) {
     input = `
     someTESTinput
     `;
   } else {
     input = await getInput();
-    if (
-      input == undefined ||
-      input == "" ||
-      input == "\n" ||
-      input == "\r\n" ||
-      input == "\r" ||
-      input == "\t" ||
-      input == " " ||
-      input == "{}"
-    ) {
-      console.error("Invalid input");
-      throw new Error("Invalid input");
+    if (input == undefined || input == "") {
+      console.error("No input");
+      throw new Error("No input");
     }
   }
-
-  // Add your code here
-
   console.log(
-    "Running day_2023/day01/part1 with input: " + input.length + " characters:",
-    input
+    `Running 2023/day01/part1. Input has ${input.length} characters`
   );
-  solution = "helloworld";
+  let solution: string = "";
+  let number = 0;
 
+  let inputArrary = input.split('\n');
+  for (let value of inputArrary) {
+    let firstnumber = value.search(/^+\d/);
+    let secondnumber = value.search(/\d+$/);;
+    number += parseInt(String(firstnumber) + String(secondnumber));
+  }
+  
+  solution = String(number);
   return solution;
-}
+};
