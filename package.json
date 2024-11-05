@@ -1,17 +1,17 @@
 {
   "name": "advent-of-code-fw",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "description": "Advent of Code Framework",
   "main": "index.ts",
   "scripts": {
     "build": "npm run clean && npm run copy-files && tsc",
-    "watch": "tsc --watch",
-    "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.txt src/**/*.css src/assets/**/*.* dist/"
+    "watch": "tsc --watch"
+    //"clean": "rimraf src/js/"
+    //"copy-files": "copyfiles -u 1 src/**/*.html src/**/*.txt src/**/*.css src/assets/**/*.* dist/"
   },
   "keywords": [],
-  "author": "",
+  "author": "BenjaminDerProgrammierer",
   "license": "ISC",
   "browser": {
     "fs": false,
@@ -26,5 +26,13 @@
     "@types/node": "^20.11.19",
     "copyfiles": "^2.4.1",
     "rimraf": "^5.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaminDerProgrammierer/advent-of-code-fw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BenjaminDerProgrammierer/advent-of-code-fw/issues"
+  },
+  "homepage": "https://github.com/BenjaminDerProgrammierer/advent-of-code-fw#readme"
 }

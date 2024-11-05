@@ -12,9 +12,7 @@ const inputs = {
   ) as unknown as HTMLInputElement[],
   submitButton: document.getElementById("submit-button") as HTMLButtonElement,
   resetButton: document.getElementById("reset-button") as HTMLButtonElement,
-  settingsButton: document.getElementById(
-    "settings-button"
-  ) as HTMLButtonElement,
+  settingsButton: document.getElementById("settings-button") as HTMLButtonElement,
 
   year: document.getElementById("year-input") as HTMLInputElement,
 };

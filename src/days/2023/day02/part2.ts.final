@@ -44,7 +44,7 @@ export default async function day(
   console.log(`Running 2023/day01/part1. Input has ${input.length} characters`);
   let solution: string = "";
   let number = 0;
-  let inputArray = getInput()
+  let inputArray: number[][][] = getInput()
     .split("\n")
     .map((g) => {
       g.split(": ")[1] //Trims Game X:
@@ -85,4 +85,8 @@ export default async function day(
   }
   solution = String(number);
   return solution;
+}
+
+function getInput(): string {
+  return ``;
 }

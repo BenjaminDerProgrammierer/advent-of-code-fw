@@ -66,3 +66,7 @@ function hasSymbol(
 
   return hasSymbol;
 }
+
+function getInput() {
+  return ``
+}
